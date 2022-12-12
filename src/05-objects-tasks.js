@@ -171,14 +171,10 @@ const cssSelectorBuilder = {
 
   throwError(error) {
     if (this.error > error) {
-      throw new Error(
-        'Selector parts should be arranged in the following order: element, id, class, attribute, pseudo-class, pseudo-element'
-      );
+      throw new Error('Selector parts should be arranged in the following order: element, id, class, attribute, pseudo-class, pseudo-element');
     }
     if (this.error === error && (error === 1 || error === 2 || error === 6)) {
-      throw new Error(
-        'Element, id and pseudo-element should not occur more then one time inside the selector'
-      );
+      throw new Error('Element, id and pseudo-element should not occur more then one time inside the selector');
     }
   },
 };
